@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 2nd Anniversary ❤️</title>
+<style>
+:root{
+  --pink:#ff4f8b;
+  --hot:#ff2f78;
+  --soft:#fff0f6;
+  --white:#ffffff;
+  --rose:#ff9fc2;
+  --deep:#8f1748;
+  --text:#4d1830;
+  --muted:#80566a;
+  --gold:#ffd56d;
+  --shadow:0 18px 55px rgba(207,45,108,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text);
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 12% 5%,rgba(255,135,184,.35),transparent 24%),
+    radial-gradient(circle at 88% 15%,rgba(255,201,222,.55),transparent 25%),
+    linear-gradient(135deg,#fff8fb,#ffe7f0 48%,#fff);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.45;
+  background-image:radial-gradient(rgba(255,79,139,.18) 1px,transparent 1px);
+  background-size:30px 30px;
+}
+.page{display:none;min-height:100vh;padding:82px 18px 70px;position:relative}
+.page.active{display:flex;align-items:center;justify-content:center;animation:fade .65s ease}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.container{width:min(1000px,100%);margin:auto;text-align:center;position:relative;z-index:2}
+h1{font-size:clamp(3rem,8vw,6.7rem);line-height:.94;margin:20px 0 15px;letter-spacing:-.06em}
+h2{font-size:clamp(2.2rem,5vw,4.4rem);margin:0 0 14px;letter-spacing:-.04em}
+h3{font-size:1.25rem}
+.lead{max-width:730px;margin:0 auto 24px;color:var(--muted);font-size:1.08rem;line-height:1.75}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:#fff;border:1px solid #ffd3e2;box-shadow:0 8px 25px rgba(207,45,108,.09);font-weight:700;color:var(--deep)}
+.gradient{background:linear-gradient(90deg,var(--hot),#ff7cae,#c8236b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{
+  border:0;border-radius:999px;padding:15px 25px;font-weight:800;font-size:1rem;cursor:pointer;
+  color:#fff;background:linear-gradient(90deg,var(--hot),#ff78ad);
+  box-shadow:0 12px 30px rgba(255,47,120,.28);transition:.25s;margin:5px;
+}
+.btn:hover{transform:translateY(-3px) scale(1.02)}
+.btn.secondary{background:#fff;color:var(--deep);border:1px solid #ffd1e0;box-shadow:0 8px 20px rgba(207,45,108,.08)}
+.top-controls{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:30;display:flex;gap:8px;align-items:center;white-space:nowrap}
+.music-status{font-size:.78rem;color:var(--deep);background:#fff;padding:8px 12px;border-radius:999px;border:1px solid #ffd1e0}
+.photo{
+  width:min(390px,86vw);aspect-ratio:1/1;margin:27px auto;border-radius:32px;overflow:hidden;
+  border:4px solid #fff;box-shadow:var(--shadow);background:#ffe1ec;position:relative;
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo span{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#a34c6e;padding:25px;background:linear-gradient(135deg,#ffe8f1,#fff)}
+.photo span small{font-size:.78rem}
+.progress{display:flex;justify-content:center;gap:8px;margin-bottom:25px}
+.dot{width:10px;height:10px;border-radius:50%;background:#f6c5d7}.dot.on{background:var(--pink);box-shadow:0 0 14px var(--rose)}
+.question{max-width:690px;margin:24px auto;padding:28px;background:rgba(255,255,255,.86);border:1px solid #ffd7e4;border-radius:30px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}
+.choice{width:100%;margin:8px 0;text-align:left;padding:15px 18px;border-radius:17px;border:1px solid #ffd6e3;background:#fff;color:var(--text);cursor:pointer;font-size:1rem;font-weight:600;transition:.2s}
+.choice:hover{background:#fff0f6;transform:translateX(4px);border-color:#ff9abd}
+.success{font-size:1.05rem;color:#b20e50;margin-top:13px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.card{background:rgba(255,255,255,.88);border:1px solid #ffd6e3;border-radius:27px;padding:23px;box-shadow:var(--shadow);text-align:left}
+.icon{font-size:2.3rem}
+.timeline{max-width:760px;margin:30px auto;text-align:left}
+.memory{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;margin:18px 0;padding:16px;background:rgba(255,255,255,.9);border-radius:25px;border:1px solid #ffd7e4;box-shadow:0 10px 30px rgba(207,45,108,.08)}
+.mini{aspect-ratio:1;border-radius:18px;overflow:hidden;background:#ffe1ec;position:relative}
+.memory img,.gallery-card img{width:100%;height:100%;object-fit:cover}
+.placeholder{display:grid;place-items:center;height:100%;text-align:center;color:#a85877;font-size:.82rem;padding:10px;background:#fff0f6}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0}
+.gallery-card{aspect-ratio:1;border-radius:25px;overflow:hidden;background:#ffe4ee;border:4px solid #fff;box-shadow:var(--shadow);position:relative}
+.gallery-card .placeholder{position:absolute;inset:0}
+.caption{font-size:.9rem;color:var(--muted);margin-top:8px}
+.letter{max-width:780px;margin:25px auto;padding:clamp(25px,6vw,62px);border-radius:34px;text-align:left;background:rgba(255,255,255,.92);border:1px solid #ffd5e3;box-shadow:var(--shadow)}
+.letter p{font-family:Georgia,serif;font-size:1.12rem;line-height:1.9;color:#5d2340;white-space:pre-line}
+.signature{font-size:1.4rem;color:var(--hot);font-family:Georgia,serif}
+.small{font-size:.88rem;color:#9b7182;margin-top:18px}
+.heart{font-size:7rem;cursor:pointer;user-select:none;filter:drop-shadow(0 10px 20px rgba(255,47,120,.28));animation:beat 1.2s infinite}
+@keyframes beat{50%{transform:scale(1.13)}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:50}
+.float{position:fixed;bottom:-40px;pointer-events:none;z-index:1;animation:rise linear forwards;opacity:.45}
+@keyframes rise{to{transform:translateY(-112vh) rotate(360deg);opacity:0}}
+.big-photo{width:min(650px,100%);aspect-ratio:16/9;border-radius:30px;overflow:hidden;background:#ffe4ee;border:5px solid #fff;box-shadow:var(--shadow);margin:24px auto;position:relative}
+.big-photo img{width:100%;height:100%;object-fit:cover}
+.big-photo .placeholder{position:absolute;inset:0}
+@media(max-width:720px){
+ .grid,.gallery{grid-template-columns:1fr}
+ .memory{grid-template-columns:95px 1fr}
+ .top-controls{max-width:95vw}
+ .music-status{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- =====================================================
+     MUSIC SETUP:
+     Upload your song to the same GitHub folder as this file.
+     Recommended filename: anniversary-song.mp3
+     You can change the filename below if needed.
+===================================================== -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="anniversary-song.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="fx"></canvas>
+
+<div class="top-controls">
+  <button class="btn secondary" onclick="toggleMusic()" id="musicBtn">🎵 Play Our Song 🎵</button>
+  <span class="music-status" id="musicStatus">Play song for better experiance ❤️</span>
+  <button class="btn secondary" onclick="restart()">↺ Start Over</button>
+</div>
+
+<!-- PAGE 1 -->
+<section class="page active" id="p1"><div class="container">
+  <div class="badge"> A surprise made especially for you ❤️</div>
+  <div class="photo">
+    <img src="cover-photo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+    <span>YOUR COVER PHOTO<br><small>Replace with cover-photo.jpg</small></span>
+  </div>
+  <h1>Happy <span class="gradient">2nd Anniversary</span> 💗</h1>
+  <p class="lead">Two beautiful years, millions of memories, endless laughter, and a story that I hope will continue for a lifetime.</p>
+  <button class="btn" onclick="go(2);celebrate()">Open Your Surprise ✨</button>
+  <p class="small">A little journey through our memories begins here…</p>
+</div></section>
+
+<!-- PAGE 2 -->
+<section class="page" id="p2"><div class="container">
+  <div class="progress"><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+  <h2>A tiny <span class="gradient">memory test</span> 💭</h2>
+  <p class="lead">Let's see if you remember 😁</p>
+  <div class="question">
+    <h3>What was that one thing we shared and ate together for the first time? 😚</h3>
+    <button class="choice" onclick="wrong('msg1')">A) Tea at Vodra Lake ☕ </button>
+    <button class="choice" onclick="correct('msg1',3)">B) Burger at Vodra Lake 🍔 </button>
+    <button class="choice" onclick="wrong('msg1')">C) Winter pithas 🥞 </button>
+    <p id="msg1" class="success"></p>
+  </div>
+</div></section>
+
+<!-- PAGE 3 -->
+<section class="page" id="p3"><div class="container">
+  <div class="progress"><i class="dot on"></i><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+  <h2>Our <span class="gradient">Memory Vault</span> 📸</h2>
+  <p class="lead">Three little moments from a story that has given me so many reasons to smile.</p>
+  <div class="timeline">
+    <div class="memory"><div class="mini"><img src="memory1.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">PHOTO 1<br>memory1.jpg</div></div><div><h3>✨ The Beginning</h3><p>This was the day we met for the first time. You were so nervous. I still remember that day. 😁🤍.</p></div></div>
+    <div class="memory"><div class="mini"><img src="memory2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">PHOTO 2<br>memory2.jpg</div></div><div><h3>💕 A Favorite Day</h3><p> That memorable picture of us 🤍.</p></div></div>
+    <div class="memory"><div class="mini"><img src="memory3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">PHOTO 3<br>memory3.jpg</div></div><div><h3>🌙 Our First Anniversary </h3><p>We spent so many beautiful moments together that day. ☺️</p></div></div>
+  </div>
+  <button class="btn" onclick="go(4);celebrate()">Unlock the Next Memory 🔓</button>
+</div></section>
+
+<!-- PAGE 4 NEW PHOTO GALLERY -->
+<section class="page" id="p4"><div class="container">
+  <div class="progress"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+  <h2>A few more <span class="gradient">reasons to smile</span> 📷</h2>
+  <p class="lead">Because three photos were definitely not enough for us.</p>
+  <div class="gallery">
+    <div><div class="gallery-card"><img src="gallery1.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">GALLERY PHOTO 1<br>gallery1.jpg</div></div><div class="caption">The first day we had Iftar together. ☺️💗</div></div>
+    <div><div class="gallery-card"><img src="gallery2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">GALLERY PHOTO 2<br>gallery2.jpg</div></div><div class="caption">Hanging out on our first anniversary. 🤍</div></div>
+    <div><div class="gallery-card"><img src="gallery3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">GALLERY PHOTO 3<br>gallery3.jpg</div></div><div class="caption">On a beautiful evening at Vodra Lake. ☕💗</div></div>
+  </div>
+  <button class="btn" onclick="go(5);celebrate()">Okay, What’s Next? 👀</button>
+</div></section>
+
+<!-- PAGE 5 NEW FUN GAME -->
+<section class="page" id="p5"><div class="container">
+  <div class="progress"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+  <h2>The <span class="gradient">Relationship Button</span> 😄</h2>
+  <p class="lead">One of these buttons is suspiciously correct.</p>
+  <div class="grid">
+    <div class="card"><div class="icon">😔</div><h3>Ignore Him</h3><p>Press this button if you want me to never disturb you again. 😔</p><button class="choice" onclick="wrong('msg5')">Press Me 😅</button></div>
+    <div class="card"><div class="icon">💗</div><h3>Choose Us</h3><p>Press this button if you want us to spend the rest of our lives together in peace and happiness just like this. ☺️🤍</p><button class="choice" onclick="correct('msg5',6)">Press Me ❤️</button></div>
+    <div class="card"><div class="icon">🍒</div><h3>Choose Tamarind</h3><p>Press this button if you want to leave all of this behind and just eat tamarind 😁</p><button class="choice" onclick="wrong('msg5')">Press Me 😂</button></div>
+  </div>
+  <p id="msg5" class="success"></p>
+</div></section>
+
+<!-- PAGE 6 NEW BIG PHOTO + HEART GAME -->
+<section class="page" id="p6"><div class="container">
+  <div class="progress"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot"></i><i class="dot"></i></div>
+  <h2>Before the final message… <span class="gradient">one more moment</span> 💖</h2>
+  <div class="big-photo">
+    <img src="special-moment.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+    <div class="placeholder">SPECIAL LARGE PHOTO<br>special-moment.jpg</div>
+  </div>
+  <p class="lead">Click the glowing heart three times to unlock what I really want to say.</p>
+  <div class="heart" onclick="heartClick()">💖</div>
+  <p id="count" class="success">0 / 3 hearts unlocked</p>
+</div></section>
+
+<!-- PAGE 7 NEW FINAL PHOTO COLLAGE -->
+<section class="page" id="p7"><div class="container">
+  <div class="progress"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot"></i></div>
+  <h2>One last <span class="gradient">look at us</span> 🥹❤️</h2>
+  <p class="lead">A few more pictures before the final page.</p>
+  <div class="gallery">
+    <div class="gallery-card"><img src="final1.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">FINAL PHOTO 1<br>final1.jpg</div></div>
+    <div class="gallery-card"><img src="final2.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">FINAL PHOTO 2<br>final2.jpg</div></div>
+    <div class="gallery-card"><img src="final3.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder">FINAL PHOTO 3<br>final3.jpg</div></div>
+  </div>
+  <button class="btn" onclick="go(8);celebrate()">Read My Final Message 💌</button>
+</div></section>
+
+<!-- PAGE 8 FINAL -->
+<section class="page" id="p8"><div class="container">
+  <div class="progress"><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i><i class="dot on"></i></div>
+  <div class="photo">
+    <img src="final-photo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+    <span>YOUR FAVORITE FINAL PHOTO<br><small>final-photo.jpg</small></span>
+  </div>
+  <h2>And finally… <span class="gradient">Happy 2 Years Anniversary my dear wife 🤍✨</span></h2>
+  <div class="letter">
+<p>I love You sonah 🖤🖤
+Ummmmmmmmmahhh 😘😘😘
+
+
+Asole kivabe suru krbo bujtecina go. Dkhte dkhte kivabe jani 2 ta bosor par hoye gelo.. Eta likhar smoi ki mone hocche jano? 
+Ei koidin agey to oke nie vodra thke ghure aslm...Tmr patla sweater nie moja nilam...😁
+But sonah dkho seta 2 year ager ktha...
+Kondik die 2 ta bosor par hye gelo bujtey parlm na go.. 😩😩
+
+It's about 730 days... Can you imagine!!! 💗
+Tmr sthe thakle to 4-5 hour o 4-5 minute er moto kete jai.. Ei jnnoi hoito bujte prini.. But jkhn pichone fire takai tkhn bujte pri asole atota sohoj cilona go...
+Amr lokkhi bow ta koto kosto korce ei 2 year a 🥺 akhno chokher smne oi sob din gular ktha vasce go...but mone korate chaina tmk... Ami chai j tmi ajker din ta and also life er baki din gula happy happy hoye golu molu hoye thako 😚😚
+
+Ummmmmmmmmahhh 😘😘😘
+
+Amra ; mainly tmi ei 2 year a onk kosto korco. I am very thankful to you for these sacrifices and also for coming to my life and becoming my life...................( I can't explain in words) 🤍🤍
+
+Aj hoito amra ak sathe celebrate korte prcina but tmi Rajshahi te asar por and amader next anniversary gulaw amra onk valo vabe celebrate korbo 😚🫶🏻 Insha'Allah 🤲🏻
+
+I love you sooooo much babai 🤍
+Ei 2 year tmi amk onk besi support korco, khrp smoi a jkhn ami low feel krci tkhn amr pase ese daraico. Akta cele mnus akta narir upor jey jey karon a weak hoi, you have done all of this...🤍🫶🏻
+
+Ei jnnoi to tmk ami besi besi kore valobasi but tmi bujhonaaa 😭💔
+
+Jaihok besoi holo sono...
+Ummmmmmmmmahhh 😘😘😘😘
+I love you koliza,, buccho? 🙂
+Ei 2 year jevabe amra happy happy thakci amra baki jibon taw orokom happy happy thakbo buccho 😘
+Tmi ektu kore vondami korbe, ami ektu kore tmk jalabo ei krte krte amader meye hbe.. Sukher songsar hbe Insha'Allah 🤍🫶🏻 
+
+Ei 2 ta year atota easy cilona. But amra parci 🤍🤍 and baki life taw tmi pase thakte Insha'Allah onk valo vabe par kore dibo.. 
+Sudhu tumi evabe amr pase theko.. 
+Thik ace sonahh?  😘😘
+
+Ummmmmmmmmahhh 😘😘😘
+I love youu Sahar er ammu 😘😘
+
+Happy Anniversary 🤍🫶🏻 </p>
+    <div class="signature">Forever yours,<br>Sahar er Pappa ❤️😘</div>
+  </div>
+  <button class="btn" onclick="celebrate()">Celebrate Us! 🎉</button>
+  <p class="small">Happy 2nd Anniversary • ❤️ • Our story continues</p>
+</div></section>
+
+<script>
+let current=1, hearts=0;
+const music=document.getElementById('bgMusic');
+const musicBtn=document.getElementById('musicBtn');
+const musicStatus=document.getElementById('musicStatus');
+
+function go(n){
+  document.getElementById('p'+current).classList.remove('active');
+  current=n;
+  document.getElementById('p'+current).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function restart(){hearts=0;document.getElementById('count').textContent='0 / 3 hearts unlocked';go(1)}
+function wrong(id){document.getElementById(id).textContent="Hmm… cute try! 😄 Let your heart guide you. ❤️"}
+function correct(id,next){
+  document.getElementById(id).textContent="Exactly! ❤️ You know us too well.";
+  celebrate();
+  setTimeout(()=>go(next),850);
+}
+function heartClick(){
+  hearts++;
+  document.getElementById('count').textContent=hearts+" / 3 hearts unlocked";
+  celebrate();
+  if(hearts>=3)setTimeout(()=>go(7),750);
+}
+function toggleMusic(){
+  if(music.paused){
+    music.play().then(()=>{
+      musicBtn.textContent='⏸ Pause Our Song';
+      musicStatus.textContent='Now playing our song ❤️';
+    }).catch(()=>{
+      musicStatus.textContent='Upload anniversary-song.mp3 first 🎵';
+    });
+  }else{
+    music.pause();
+    musicBtn.textContent='🎵 Play Our Song';
+    musicStatus.textContent='Music paused';
+  }
+}
+music.addEventListener('ended',()=>{musicBtn.textContent='🎵 Play Our Song'});
+music.addEventListener('error',()=>{musicStatus.textContent='Add anniversary-song.mp3 to your GitHub folder'});
+
+const canvas=document.getElementById('fx');
+const ctx=canvas.getContext('2d');
+let parts=[],animating=false;
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight}
+addEventListener('resize',resize);resize();
+
+function celebrate(){
+  for(let i=0;i<140;i++){
+    parts.push({
+      x:innerWidth/2,y:innerHeight/2,
+      vx:(Math.random()-.5)*14,
+      vy:(Math.random()-.82)*14,
+      g:.16,life:75+Math.random()*55,
+      s:3+Math.random()*6,
+      c:['#ff2f78','#ff86b3','#ffd56d','#ffffff','#c8236b'][Math.floor(Math.random()*5)]
+    });
+  }
+  if(!animating)animate();
+}
+function animate(){
+  animating=true;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  parts=parts.filter(p=>p.life-->0);
+  parts.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;
+    ctx.fillStyle=p.c;
+    ctx.fillRect(p.x,p.y,p.s,p.s);
+  });
+  if(parts.length)requestAnimationFrame(animate);else animating=false;
+}
+for(let i=0;i<22;i++){
+  const e=document.createElement('div');
+  e.className='float';
+  e.textContent=['❤','✦','♡','🌸'][i%4];
+  e.style.left=Math.random()*100+'vw';
+  e.style.animationDuration=8+Math.random()*10+'s';
+  e.style.fontSize=16+Math.random()*23+'px';
+  e.style.animationDelay=Math.random()*-12+'s';
+  document.body.appendChild(e);
+}
+</script>
+</body>
+</html>
